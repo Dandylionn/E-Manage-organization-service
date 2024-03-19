@@ -11,5 +11,7 @@ public interface OrganizationService
     List<OrganizationDto> getAllOrganizations();
     OrganizationDto updateOrganization(OrganizationDto organization);
 
+    OrganizationDto getOrganizationByCode(String organizationCode);
+
     void deleteOrganization(Long organizationId);
 }

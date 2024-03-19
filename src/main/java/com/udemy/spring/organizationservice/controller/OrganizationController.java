@@ -31,6 +31,13 @@ public class OrganizationController {
         return new ResponseEntity<>(organizationDto, HttpStatus.OK);
     }
 
+    //build get organization by organizationCode REST API
+    @GetMapping("{code}")
+    public ResponseEntity<OrganizationDto> getOrganizationByCode(@PathVariable("code") String organizationCode){
+        OrganizationDto organizationDto = organizationService.getOrganizationByCode(organizationCode);
+        return new ResponseEntity<>(organizationDto, HttpStatus.OK);
+    }
+
     //build get all organizations
     @GetMapping
     public ResponseEntity<List<OrganizationDto>> getAllOrganizations(){
