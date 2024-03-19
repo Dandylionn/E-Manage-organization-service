@@ -25,7 +25,7 @@ public class OrganizationController {
     }
 
     //build get organization by id REST API
-    @GetMapping("{id}")
+    @GetMapping("/id/{id}")
     public ResponseEntity<OrganizationDto> getOrganizationById(@PathVariable("id") Long organizationId){
         OrganizationDto organizationDto = organizationService.getOrganizationById(organizationId);
         return new ResponseEntity<>(organizationDto, HttpStatus.OK);
